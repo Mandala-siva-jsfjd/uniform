@@ -60,7 +60,7 @@ const Login = () => {
         <Stack spacing={3} alignItems="center">
           <img src={logo} alt="Logo" style={{ width: 80 }} />
           <Typography variant="h5" sx={{ fontWeight: "bold", color: "#007e94" }}>
-            Uniform Tracking Login
+            Uniform Tracking Login page
           </Typography>
 
           <form onSubmit={handleSubmit} style={{ width: "100%" }}>
