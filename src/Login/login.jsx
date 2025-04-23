@@ -9,7 +9,8 @@ import {
   CircularProgress,
 } from "@mui/material";
 import { enqueueSnackbar } from "notistack";
-import logo from "../images/TataSTRIVE.png"; // your logo
+import logo from "../images/TataSTRIVE.png";
+//import { auth, provider, signInWithPopup } from "../firebase";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ userName: "", password: "" });
@@ -36,6 +37,17 @@ const Login = () => {
     }, 1000);
   };
 
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     const result = await signInWithPopup(auth, provider);
+  //     const user = result.user;
+  //     enqueueSnackbar(`Welcome ${user.displayName}`, { variant: "success" });
+  //   } catch (error) {
+  //     console.error(error);
+  //     enqueueSnackbar("Google sign-in failed", { variant: "error" });
+  //   }
+  // };
+
   return (
     <Box
       sx={{
@@ -60,7 +72,7 @@ const Login = () => {
         <Stack spacing={3} alignItems="center">
           <img src={logo} alt="Logo" style={{ width: 80 }} />
           <Typography variant="h5" sx={{ fontWeight: "bold", color: "#007e94" }}>
-            Uniform Tracking Login
+            Uniform Tracking Login page
           </Typography>
 
           <form onSubmit={handleSubmit} style={{ width: "100%" }}>
@@ -96,6 +108,21 @@ const Login = () => {
                 }}
               >
                 {loading ? <CircularProgress size={24} color="inherit" /> : "Login"}
+              </Button>
+
+              <Button
+                fullWidth
+                variant="outlined"
+                //onClick={handleGoogleLogin}
+                sx={{
+                  borderColor: "#007e94",
+                  color: "#007e94",
+                  fontWeight: "bold",
+                  textTransform: "none",
+                  borderRadius: 8,
+                }}
+              >
+                Sign in with Google
               </Button>
             </Stack>
           </form>
